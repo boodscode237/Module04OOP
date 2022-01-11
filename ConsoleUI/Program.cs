@@ -10,8 +10,56 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            // building a person from the blueprint
+            // PersonModel person = new PersonModel();
+            //
+            // List<PersonModel> people = new List<PersonModel>();
+            //
+            // person.firstName = "Joe";
+            // people.Add(person);
+            //
+            // person = new PersonModel();
+            // person.firstName = "Quagmire";
+            // people.Add(person);
+            //
+            // foreach (PersonModel p in people)
+            // {
+            //     Console.WriteLine(p.firstName);
+            // }
+
+            List<PersonModel> people = new List<PersonModel>();
+            string firstName = "";
+            string lastName = "";
+
+
+            do
+            {
+                Console.Write("What is your first name (or type exit to stop): ");
+                firstName = Console.ReadLine();
+
+                Console.Write("What is your last name (or type exit to stop): ");
+                lastName = Console.ReadLine();
+
+                if (firstName.ToLower() != "exit")
+                {
+                    PersonModel person = new PersonModel();
+                    person.FirstName = firstName;
+                    person.LastName = lastName;
+                    people.Add(person);
+                }
+            } while (firstName.ToLower() != "exit");
+
+            foreach (PersonModel pe in people)
+            {
+                ProcessPerson.GreatPerson(pe);
+            }
+            Console.ReadLine();
+        }
+
+        public static void StaticClasses()
+        {
             string firstName = RequestData.GetAString("What is your first name: ");
-            
+
             UserMessages.ApplicationStartMessage(firstName);
 
             double x = RequestData.GetADouble("Please enter your first number: ");
@@ -21,7 +69,6 @@ namespace ConsoleUI
 
             UserMessages.PrintResultMessage($"The sum of x and y is {result}");
 
-            Console.ReadLine();
         }
 
     }
