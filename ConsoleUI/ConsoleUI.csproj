@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculateData.cs" />
-    <Compile Include="PersonModel.cs" />
+    <Compile Include="Models\AddressModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
     <Compile Include="ProcessPerson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,5 +55,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
